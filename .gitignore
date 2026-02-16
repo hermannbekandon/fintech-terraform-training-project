@@ -1,0 +1,21 @@
+# 1. The "Heavy Stuff" (Binaries)
+# When you run 'init', Terraform downloads hundreds of MBs of providers. 
+# We don't want these in GitHub.
+.terraform/
+
+# 2. The "State" (THE SECRETS)
+# This file contains EVERY detail about your AWS setup.
+# In a Fintech app, this file is a goldmine for hackers. Never commit it.
+*.tfstate
+*.tfstate.*
+
+# 3. The "Answers" (Your Values)
+# Since your .tfvars file now contains your specific IPs and project names, 
+# it stays on your laptop only.
+*.tfvars
+*.tfvars.json
+
+# 4. The "Work in Progress"
+# Temporary plan files and crash logs.
+*.tfplan
+crash.log
