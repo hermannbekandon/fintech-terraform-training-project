@@ -1,9 +1,9 @@
 terraform {
     backend "s3" {
-        bucket = "myfintech-training-terraform-state"
+        bucket = "s3bucket-terraform-training"
         key    = "vpc/terraform.tfstate"
         region = "us-east-1"    
         encrypt = true
-        dynamodb_table = "myfintech-training-terraform-lock"
+        use_lockfile = true
     }
 }
